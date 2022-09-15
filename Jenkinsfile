@@ -1,8 +1,5 @@
 pipeline{
     agent any 
-    environment{
-        VERSION = "${env.BUILD_ID}"
-    }
     stages{
        stage('SCM Checkout') {
             steps{
@@ -12,7 +9,7 @@ pipeline{
 
         stage('Build package') {
             steps{
-                sh '/opt/gradle-6.8.3/bin/gradlew clean build'
+                sh '/opt/gradle-6.8.3/bin/gradle clean build'
             }
         }
 
@@ -22,7 +19,7 @@ pipeline{
                       [
                          artifactId: 'sampleWeb', 
                          classifier: '', 
-                         file: 'build/libs/sampleWeb-${VERSION}.war', 
+                         file: 'build/libs/sampleWeb-0.0.1.war', 
                          type: 'war'
                      ]
                ], 
@@ -32,7 +29,7 @@ pipeline{
                nexusVersion: 'nexus3', 
                protocol: 'http', 
                repository: 'maven-releases', 
-               version: '${VERSION}'
+               version: '0.0.1'
             }
         }
     }
