@@ -27,7 +27,7 @@ pipeline{
                      ]
                ], 
                credentialsId: 'nexus', 
-               groupId: ''com.example, 
+               groupId: 'com.example', 
                nexusUrl: '172.31.41.122.69:8081', 
                nexusVersion: 'nexus3', 
                protocol: 'http', 
