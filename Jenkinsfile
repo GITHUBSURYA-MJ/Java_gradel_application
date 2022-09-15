@@ -20,9 +20,9 @@ pipeline{
             steps {  
                   nexusArtifactUploader artifacts: [
                       [
-                         artifactId: 'spring-petclinic', 
+                         artifactId: 'sampleWeb', 
                          classifier: '', 
-                         file: 'build/libs/spring-petclinic-${VERSION}.war', 
+                         file: 'build/libs/sampleWeb-${VERSION}.war', 
                          type: 'war'
                      ]
                ], 
