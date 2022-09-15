@@ -12,7 +12,7 @@ pipeline{
 
         stage('Build package') {
             steps{
-                sh './gradlew clean build'
+                sh '/opt/gradle-6.8.3/bin/gradlew clean build'
             }
         }
 
