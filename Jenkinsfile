@@ -23,12 +23,12 @@ pipeline{
                          type: 'war'
                      ]
                ], 
-               credentialsId: 'nexus', 
+               credentialsId: 'nexus_pavan', 
                groupId: 'com.example', 
                nexusUrl: '172.31.27.85:8081', 
                nexusVersion: 'nexus3', 
                protocol: 'http', 
-               repository: 'Gradle-release', 
+               repository: 'maven-releases', 
                version: '0.0.1'
             }
         }
