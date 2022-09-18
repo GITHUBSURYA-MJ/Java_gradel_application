@@ -3,13 +3,13 @@ pipeline{
     stages{
        stage('SCM Checkout') {
             steps{
-            git url: 'https://github.com/InnaPavan/Java_gradel_application.git', branch: "main"
+            git url: 'https://github.com/GITHUBSURYA-MJ/Java_gradel_application.git', branch: "main"
             }
         }
 
         stage('Build package') {
             steps{
-                sh '/opt/gradle-6.8.3/bin/gradle clean build'
+                sh '/opt/gradle/gradle-6.5/bin/gradle clean build'
             }
         }
 
@@ -25,10 +25,10 @@ pipeline{
                ], 
                credentialsId: 'nexus', 
                groupId: 'com.example', 
-               nexusUrl: '172.31.41.122:8081', 
+               nexusUrl: '172.31.27.85:8081', 
                nexusVersion: 'nexus3', 
                protocol: 'http', 
-               repository: 'maven-releases', 
+               repository: 'Gradle', 
                version: '0.0.1'
             }
         }
