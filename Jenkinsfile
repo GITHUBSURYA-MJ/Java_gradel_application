@@ -9,7 +9,7 @@ pipeline{
 
         stage('Build package') {
             steps{
-                sh '/opt/gradle/gradle-6.5/bin/gradle clean build'
+                sh '/opt/gradle-6.8.3/bin/gradle clean build'
             }
         }
 
